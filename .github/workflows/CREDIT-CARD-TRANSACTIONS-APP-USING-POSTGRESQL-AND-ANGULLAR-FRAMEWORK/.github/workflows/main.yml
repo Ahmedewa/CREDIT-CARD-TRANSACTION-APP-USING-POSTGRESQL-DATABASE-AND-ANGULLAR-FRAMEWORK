@@ -1,0 +1,148 @@
+NAME : DEPLOYMENT OF 'CREDIT-CARD-TRANSACTION-APP-USING-POSTGRESQL-AND-ANGULLAR-FRAMEWORK/.github/workflows/
+main.yml
+CONTENTS:
+A. GitHub Actions workflows pipeline for CI/CD.
+B. DOCKER(CONTAINERIZATION)
+C. KUBERNETES(ORCHESTRATION)
+D. DEPLOYMENT TO CLOUD PLATEFORMS(AWS, GCP, ACP, HEROKU, DIGITAL OCEAN)
+
+A. GitHub Actions Workflow Pipeline for CI/CD:
+
+Create a `.github/workflows/ci-cd.yml` file:
+
+```yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm install
+    - run: npm test
+    - run: npm run build
+```
+
+B. Docker:
+
+Create a `Dockerfile` for containerizing your application:
+
+```dockerfile
+# Use an official Node.js runtime as a parent image
+FROM node:14
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the application port
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "app.js"]
+```
+
+C. Kubernetes(for Orchestration):
+
+Kubernetes is a system for automating the deployment, scaling, and management of containerized applications.
+
+- Installation:
+  - Install a Kubernetes distribution like [Minikube](https://minikube.sigs.k8s.io/docs/start/) for local development.
+
+-   Create Kubernetes Configuration Files:
+  - Define a `deployment.yaml` for your application:
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: credit-card-app
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: credit-card-app
+      template:
+        metadata:
+          labels:
+            app: credit-card-app
+        spec:
+          containers:
+          - name: credit-card-app
+            image: credit-card-app
+            ports:
+            - containerPort: 3000
+    ```
+
+-  Deploy to Kubernetes:
+  - Apply the configuration:
+    ```bash
+    kubectl apply -f deployment.yaml
+    ```
+
+
+D. Deployment to Different Platforms:
+
+- AWS:
+  Use Elastic Beanstalk or EC2 for deployment. You can use the AWS CLI to deploy your Docker container.
+
+  ```bash
+  aws elasticbeanstalk create-application-version --application-name my-app --version-label v1 --source-bundle S3Bucket=my-bucket,S3Key=my-app.zip
+  ```
+
+-  GCP:
+  Use Google Cloud Run or App Engine. Deploy your Docker container using the gcloud CLI.
+
+  ```bash
+  gcloud run deploy my-service --image gcr.io/my-project/my-image
+  ```
+
+-  Heroku:
+  Deploy using the Heroku CLI.
+
+  ```bash
+  heroku create
+  git push heroku main
+  ```
+
+- Digital Ocean:
+  Use App Platform or Droplets. Deploy your Docker container using the Digital Ocean CLI.
+
+  ```bash
+  doctl apps create --spec app.yaml
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
