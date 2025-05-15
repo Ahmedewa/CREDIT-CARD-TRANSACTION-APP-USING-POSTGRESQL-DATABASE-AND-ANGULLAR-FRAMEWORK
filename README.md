@@ -1831,6 +1831,30 @@ To configure R.Syslog for log monitoring, you can set up a configuration file li
 *.* /var/log/my_app.log
 ```
 
+
+INITATE 'START &BUILD' USING 'JSON PACKAGES':
+ - init.py
+
+import json
+import subprocess
+import os
+
+def install_packages():
+    with open('requirements.json') as f:
+        data = json.load(f)
+
+    packages = data['packages']
+    for package, version in packages.items():
+        subprocess.run(['npm', 'install', f"{package}{version}"])
+
+if __name__ == "__main__":
+    install_packages()
+
+
+
+
+
+
 PROBLEMS/DISADVANTAGES
 
 Problems/Disadvantages: This is extremely critical as the 'Business world' , is swaming 
