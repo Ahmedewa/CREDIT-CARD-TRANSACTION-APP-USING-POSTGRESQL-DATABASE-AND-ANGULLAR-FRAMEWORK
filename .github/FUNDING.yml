@@ -1,0 +1,37 @@
+# Supported Funding Models
+
+Specify up to four GitHub Sponsors usernames (`github:`), or a single username/project for Patreon (`patreon:`), Open Collective (`open_collective:`), Ko-fi (`ko_fi:`), Tidelift (`tidelift:`), Community Bridge (`community_bridge:`), Liberapay (`liberapay:`), IssueHunt (`issuehunt:`), LFX Crowdfunding (`lfx_crowdfunding:`), Polar (`polar:`), Buy Me a Coffee (`buy_me_a_coffee:`), or thanks.dev (`thanks_dev:`). For custom sponsorships, provide up to four URLs (`custom:`).You can also include a single NuGet package ID (`nuget:`), or specify one or more cryptocurrencies for donations (`bitcoin:`, `ethereum:`, `monero:`, `litecoin:`, `dogecoin:`, `solana:`).Here's an example:
+
+```yaml
+# Supported Funding Models
+
+Specify up to four GitHub Sponsors usernames (`github:`), or a single username/project for Patreon (`patreon:`), Open Collective (`open_collective:`), Ko-fi (`ko_fi:`), Tidelift (`tidelift:`), Community Bridge (`community_bridge:`), Liberapay (`liberapay:`), IssueHunt (`issuehunt:`), LFX Crowdfunding (`lfx_crowdfunding:`), Polar (`polar:`), Buy Me a Coffee (`buy_me_a_coffee:`), or thanks.dev (`thanks_dev:`). For custom sponsorships, provide up to four URLs (`custom:`). You can also include a single NuGet package ID (`nuget:`), or specify one or more cryptocurrencies for donations (`bitcoin:`, `ethereum:`, `monero:`, `litecoin:`, `dogecoin:`, `solana:`).
+
+For multiple options, list them in an array. Here's a comprehensive example:
+
+```yaml
+funding:
+  - github: [user1, user2, user3, user4]
+  - patreon: user/project
+  - open_collective: project-slug
+  - ko_fi: username
+  - tidelift: npm/package-name
+  - community_bridge: project-name
+  - liberapay: username
+  - issuehunt: repo-owner/repo-name
+  - lfx_crowdfunding: project-name
+  - polar: org/project
+  - buy_me_a_coffee: username
+  - thanks_dev: domain
+  - custom: ["https://example.com/sponsor1", "https://example.com/sponsor2", "https://example.com/sponsor3", "https://example.com/sponsor4"]
+  - nuget: PackageId
+  - bitcoin: bc1q...
+  - ethereum: "0x..."
+  - monero: "4..."
+  - litecoin: L...
+  - dogecoin: D...
+  - solana: pubkey...
+```
+
+Remember to replace the placeholder values with your actual usernames, project slugs, package IDs, URLs, and cryptocurrency addresses. Providing clear and accurate funding information helps support
+your project!
