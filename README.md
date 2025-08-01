@@ -19,33 +19,29 @@ CONCLUSION
 NAME OF PROJECT; CREDIT-CARD-TRANSACTION-APP-USING-POSTGRESQL-DATABASE-AND-ANGULLAR-FRAMEWORK( with integration of 'web3.js ,and 'Ethereum')
 
 AIMS/GOALS/BENEFITS:
-
-
-
-
 ## **1. Aims and Goals of the Credit Card Transaction App**
 
 The Credit Card Transaction App is designed to revolutionize digital payments by combining blockchain security with modern web technologies. Its core objectives are:
 
  **1.1 Key Goals**
 
-🔐 **1. Secure Transactions**
+ **1. Secure Transactions**
 - Utilize Ethereum blockchain to guarantee transaction integrity, immutability, and resistance to tampering.
 - Implement smart contracts to automate validation and reduce fraud risks.
 
-🌐 **2. Decentralized Payment Processing**
+ **2. Decentralized Payment Processing**
 - Integrate Web3.js to enable Ethereum wallet payments (e.g., MetaMask).
 - Maintain transaction records both on-chain (Ethereum) and off-chain (PostgreSQL) for enhanced transparency and scalability.
 
-🖥️ **3. Intuitive User Interface**
+**3. Intuitive User Interface**
 - Develop a responsive frontend using Angular, enhanced with Bootstrap/Tailwind for modern UI components.
 - Allow users to connect wallets, initiate payments, and monitor transaction statuses effortlessly.
 
-⚙️ **4. Scalable Backend Architecture**
+ **4. Scalable Backend Architecture**
 - Employ PostgreSQL for robust off-chain storage of user profiles, transaction metadata, and credit card information.
 - Ensure efficient data retrieval and management for high-performance operations.
 
-📊 **5. Transparency and Auditability**
+ **5. Transparency and Auditability**
 - Record critical transaction data on Ethereum to ensure immutability and public verifiability.
 - Leverage blockchain logs and smart contract events to trace the full lifecycle of each payment.
 
@@ -55,13 +51,13 @@ Integrating **Web3.js** and **Ethereum** into a credit card transaction app intr
 
 ---
 
-### 🔥 **2.1.1 High Gas Fees**
+###  **2.1.1 High Gas Fees**
 
 - **Challenge**: Ethereum transactions require gas fees, which can be prohibitively expensive—especially for micro-transactions.
 - **Solutions**:
   - Adopt **Layer-2 scaling solutions** such as **Polygon**, **Arbitrum**, or **Optimism** to significantly reduce transaction costs.
   - Optimize smart contract logic to minimize gas consumption.
-  - Example: Efficient Solidity code to reduce redundant storage writes:
+  - Efficient Solidity code to reduce redundant storage writes:
     ```solidity
     uint public totalTransactions;
 
@@ -72,13 +68,13 @@ Integrating **Web3.js** and **Ethereum** into a credit card transaction app intr
 
 ---
 
-### ⏳ **2.1.2 Transaction Confirmation Delays**
+###  **2.1.2 Transaction Confirmation Delays**
 
 - **Challenge**: Ethereum transactions may take several seconds (or longer) to confirm, leading to a suboptimal user experience.
 - **Solutions**:
   - Display **pending transaction status** to keep users informed during confirmation.
   - Use **Web3.js** to track transaction confirmations and update the UI accordingly.
-  - Example: Basic Web3.js implementation to monitor confirmations:
+  - Basic Web3.js implementation to monitor confirmations:
     ```javascript
     web3.eth.sendTransaction(txObject)
       .on('transactionHash', function(hash){
@@ -97,13 +93,13 @@ Integrating Ethereum wallets like MetaMask into a credit card transaction app ca
 
 ---
 
-### 🔌 **2.2.1 Wallet Not Connected**
+### **2.2.1 Wallet Not Connected**
 
 - **Challenge**: Users may fail to connect their Ethereum wallets, preventing them from initiating transactions.
 - **Solutions**:
   - Provide a clear and accessible **"Connect Wallet"** button in the UI.
   - Gracefully handle connection errors and guide users through troubleshooting.
-  - Example: Wallet connection logic in Angular (TypeScript):
+  - Wallet connection logic in Angular (TypeScript):
     ```typescript
     async connectWallet(): Promise<void> {
       if (window.ethereum) {
@@ -122,12 +118,12 @@ Integrating Ethereum wallets like MetaMask into a credit card transaction app ca
 
 ---
 
-### 🌐 **2.2.2 Unsupported Network**
+###  **2.2.2 Unsupported Network**
 
 - **Challenge**: Users may be connected to a test network (e.g., Ropsten, Rinkeby) instead of the Ethereum Mainnet, leading to failed or invalid transactions.
 - **Solutions**:
   - Detect the current network ID and prompt users to switch to the correct one.
-  - Example: Network validation using Web3.js:
+  - Network validation using Web3.js:
     ```javascript
     const expectedNetworkId = '1'; // Ethereum Mainnet
 
@@ -143,12 +139,12 @@ Integrating Ethereum wallets like MetaMask into a credit card transaction app ca
 
 ----
 
-### 🌐 **2.2.2 Unsupported Network**
+###  **2.2.2 Unsupported Network**
 
 - **Challenge**: Users may be connected to a test network (e.g., Ropsten, Rinkeby) instead of the Ethereum Mainnet, leading to failed or invalid transactions.
 - **Solutions**:
   - Detect the current network ID and prompt users to switch to the correct one.
-  - Example: Network validation using Web3.js:
+  - Network validation using Web3.js:
     ```javascript
     const expectedNetworkId = '1'; // Ethereum Mainnet
 
@@ -169,7 +165,7 @@ Integrating Ethereum wallets like MetaMask into a credit card transaction app ca
 Problem: Bugs in smart contracts can lock funds or cause transaction failures.
 Solution:
 Write unit tests for smart contracts using Truffle or Hardhat.
-Example test using Hardhat:
+ Hardhat:
 javascript
 Copy
 const { expect } = require("chai");
@@ -193,7 +189,7 @@ Security is paramount when handling financial transactions and blockchain intera
 
 ---
 
-### 🔐 **2.4.1 Private Key Exposure**
+###  **2.4.1 Private Key Exposure**
 
 - **Challenge**: Users may unintentionally expose their private keys, leading to irreversible loss of funds or account compromise.
 - **Solutions**:
@@ -203,13 +199,13 @@ Security is paramount when handling financial transactions and blockchain intera
 
 ---
 
-### 🔁 **2.4.2 Replay Attacks**
+###  **2.4.2 Replay Attacks**
 
 - **Challenge**: Malicious actors can intercept and reuse signed transactions on the same or different networks, causing unintended duplicate actions.
 - **Solutions**:
   - Use **nonces** (unique transaction counters) to ensure each transaction is processed only once.
   - Validate the nonce on-chain to prevent duplicate execution.
-  - Example: Basic nonce usage in Solidity:
+  - Basic nonce usage in Solidity:
     ```solidity
     mapping(address => uint256) public nonces;
 
@@ -222,9 +218,7 @@ Security is paramount when handling financial transactions and blockchain intera
 
 ---
 
-Would you like help improving the **Problems/Disadvantages** section next, or perhaps the **Conclusion** or **Tech Stack** from your README on [GitHub](https://github.com/Ahmedewa/CREDIT-CARD-TRANSACTION-APP-USING-POSTGRESQL-DATABASE-AND-ANGULLAR-FRAMEWORK/edit/main/README.md)?
 
----
 
 ## **2.4 Security Issues and Mitigation Strategies**
 
@@ -232,7 +226,7 @@ Security is critical in blockchain-based financial applications. Below are key v
 
 ---
 
-### 🔐 **2.4.1 Private Key Exposure**
+###  **2.4.1 Private Key Exposure**
 
 - **Challenge**: Users may accidentally expose their private keys, risking unauthorized access and loss of funds.
 - **Solutions**:
@@ -242,13 +236,14 @@ Security is critical in blockchain-based financial applications. Below are key v
 
 ---
 
-### 🔁 **2.4.2 Replay Attacks**
+###  **2.4.2 Replay Attacks**
 
 - **Challenge**: Attackers can reuse signed transactions to perform unintended duplicate actions.
 - **Solutions**:
   - Implement **nonces** to ensure each transaction is unique and processed only once.
   - Validate nonces on-chain to prevent replay.
-  - Example in Solidity:
+  -  Solidity:
+    
     ```solidity
     mapping(address => uint) public nonces;
 
@@ -267,13 +262,13 @@ While blockchain ensures immutability, off-chain databases like PostgreSQL are e
 
 ---
 
-### 🔄 **2.5.1 Data Consistency**
+###  **2.5.1 Data Consistency**
 
 - **Challenge**: On-chain and off-chain data may become inconsistent due to failed syncs or missed events.
 - **Solutions**:
   - Use **blockchain events** to trigger updates in the PostgreSQL database.
   - Implement retry logic and logging to ensure reliable synchronization.
-  - Example using Web3.js and Axios:
+  -  Web3.js and Axios:
     ```typescript
     contract.events.TransactionCreated()
       .on("data", async (event) => {
@@ -290,13 +285,13 @@ While blockchain ensures immutability, off-chain databases like PostgreSQL are e
 
 ---
 
-### 🛡️ **2.5.2 SQL Injection**
+###  **2.5.2 SQL Injection**
 
 - **Challenge**: Malicious users may attempt to inject harmful SQL queries via API endpoints.
 - **Solutions**:
   - Always use **parameterized queries** or ORM tools to prevent injection.
   - Sanitize and validate all user inputs before processing.
-  - Example using Node.js with PostgreSQL:
+  -  Node.js with PostgreSQL:
     ```javascript
     const result = await pool.query(
       "INSERT INTO transactions (user_id, amount) VALUES ($1, $2)",
@@ -314,14 +309,14 @@ A smooth and intuitive user experience is essential for adoption and trust in fi
 
 ---
 
-### ⚠️ **2.6.1 Poor Error Handling**
+###  **2.6.1 Poor Error Handling**
 
 - **Challenge**: Users often receive vague or generic error messages, leaving them confused and frustrated.
 - **Solutions**:
   - Provide **clear, actionable error messages** tailored to specific failure scenarios.
   - Include **contextual guidance** to help users resolve issues (e.g., insufficient funds, network errors, wallet not connected).
   - Log errors for developers while keeping messages user-friendly.
-  - Example in Angular (TypeScript):
+  - Angular (TypeScript):
     ```typescript
     try {
       await contract.methods.createTransaction(amount).send({ from: account });
@@ -341,13 +336,9 @@ A smooth and intuitive user experience is essential for adoption and trust in fi
 
 
     ---
-
-
-
-
-    ### **Comprehensive Guide for a Secure, Scalable, and User-Friendly Angular Credit Card App with Web3.js and Ethereum**
-
-This guide provides **detailed explanations, code, resources, and best practices** to integrate **Web3.js and Ethereum** into your **Angular-based credit card transaction app**. It addresses **security, scalability, testing, user experience**, and **monitoring** to ensure a robust and reliable application.
+ 
+INTEGRATION OF FRONTEND[ANGULAR] AND NODE.JS[BACKEND] WITH WEB.3JS & ETHEREUM
+-Integration of **Web3.js and Ethereum** into our **Angular-based credit card transaction app**. It addresses **security, scalability, testing, user experience**, and **monitoring** to ensure a robust and reliable application.
 
 ---
 
@@ -402,7 +393,7 @@ export class Web3Service {
 
 Nonces prevent **replay attacks**, and gas optimization minimizes transaction costs.
 
-#### **Code Example: Nonce and Gas Management**
+#### **Code : Nonce and Gas Management**
 ```typescript
 async sendTransaction(amount: number) {
   const account = this.getAccount();
@@ -426,7 +417,7 @@ async sendTransaction(amount: number) {
 
 Use parameterized queries in **PostgreSQL** to prevent **SQL injection**.
 
-#### **Code Example: Secure SQL Queries**
+#### **Code : Secure SQL Queries**
 ```javascript
 const result = await pool.query(
   'INSERT INTO transactions (user_id, amount, ethereum_tx_id) VALUES ($1, $2, $3)',
@@ -444,7 +435,7 @@ Scalability ensures your app can handle high transaction volumes and reduce cost
 
 Layer-2 solutions like **Polygon** and **Arbitrum** reduce gas fees and improve transaction speeds.
 
-#### **Code Example: Using Polygon**
+#### **Code : Using Polygon**
 When deploying your smart contract, configure it for Polygon:
 ```javascript
 const Web3 = require('web3');
@@ -503,7 +494,7 @@ contract('CreditCardTransaction', (accounts) => {
 
 Test wallet interactions and transaction flows using tools like **Jest**.
 
-#### **Example: Wallet Connection Test**
+#### **Wallet Connection Test**
 ```javascript
 test('connectWallet should connect to MetaMask', async () => {
   const web3Service = new Web3Service();
@@ -522,7 +513,7 @@ A good user experience includes clear feedback, error messages, and transaction 
 
 Use Web3.js to track transaction statuses and provide real-time feedback.
 
-#### **Code Example: Real-Time Feedback**
+#### **Code : Real-Time Feedback**
 ```typescript
 async trackTransaction(txHash: string) {
   const receipt = await this.web3.eth.getTransactionReceipt(txHash);
@@ -540,7 +531,7 @@ async trackTransaction(txHash: string) {
 
 Allow users to view their transaction history and wallet balances.
 
-#### **Code Example: Get Wallet Balance**
+#### **Code : Get Wallet Balance**
 ```typescript
 async getWalletBalance() {
   const account = this.getAccount();
@@ -549,7 +540,7 @@ async getWalletBalance() {
 }
 ```
 
-#### **Code Example: Fetch Transaction History**
+#### **Code : Fetch Transaction History**
 ```javascript
 app.get('/api/transactions', async (req, res) => {
   const result = await pool.query('SELECT * FROM transactions WHERE user_id = $1', [req.user.id]);
@@ -565,9 +556,9 @@ Monitoring ensures your app is reliable and errors are caught early.
 
 ### **5.1 Use Sentry for Error Tracking**
 
-Integrate Sentry into your Angular app for error and performance monitoring.
+Integrate Sentry into our Angular app for error and performance monitoring.
 
-#### **Code Example: Angular Sentry Integration**
+#### **Code : Angular Sentry Integration**
 ```bash
 npm install @sentry/angular @sentry/tracing
 ```
@@ -593,7 +584,7 @@ Sentry.init({
 
 Log blockchain events to debug and monitor transaction flows.
 
-#### **Code Example: Event Logging**
+#### **Code : Event Logging**
 ```typescript
 contract.events.TransactionCreated()
   .on('data', (event) => {
@@ -646,22 +637,12 @@ By following this guide, you can build a **secure, scalable, and user-friendly c
 
 
 
-### **Enhancing the Angular Credit Card Transaction App with Mobb Vibe Shield, Middleware Integrations, and Ethereum Network Environments**
-
-This guide provides **detailed explanations, code, and automation techniques** for the following tasks:
-
-1. **Incorporate 'Mobb Vibe Shield' for Error Detection and Handling** (automating the process with Sentry).
-2. **Handle Different Ethereum Network Environments** in the app.
-3. **Integrate Middleware Components** (API Gateway, Load Balancer, Apache Spark, Axios.js, Webhook, and RabbitMQ).
-
----
-
 
 ERROR  DETECTION USING MOBB VIBE SHIELD, VIBE SHIELD AND SENTRY
 
 ## **1. Incorporate Mobb Vibe Shield for Error Detection and Handling**
 
-**Mobb Vibe Shield** is a testing framework for API testing and error detection. Here's how to integrate it into your app and send error logs to **Sentry** for monitoring.
+**Mobb Vibe Shield** is a testing framework for API testing and error detection. - integrate it into our app and send error logs to **Sentry** for monitoring.
 
 ---
 
@@ -746,7 +727,7 @@ ERROR  DETECTION USING MOBB VIBE SHIELD, VIBE SHIELD AND SENTRY
    ```
 
 3. **Automate Tests in CI/CD**
-   Add Mobb Vibe Shield to your CI/CD pipeline:
+   Add Mobb Vibe Shield to our CI/CD pipeline:
    ```yaml
    name: CI/CD Pipeline for Error Detection
 
@@ -977,7 +958,7 @@ async fetchTransactions() {
 
 Set up a webhook to notify external services of transaction events.
 
-#### **Example: Webhook Listener**
+#### ** Webhook Listener**
 ```javascript
 const express = require('express');
 const app = express();
@@ -1033,6 +1014,308 @@ receiveMessage();
 
 ---
 
+      POSTGRESQL DATABASE AND EXTENSIONS[CITUS, PG-POOL-2,PL/PROXY & ALEMIC]
+      
+### **Integrating PostgreSQL with Extensions in Our Angular Project :**  
+  
+- **Citus** (for scaling PostgreSQL horizontally),  
+- **pg-pool-2** (for connection pooling),  
+- **PL/Proxy** (for distributed database logic),  
+- **Alembic** (for database migrations).  
+
+---
+
+## **1. Overview of PostgreSQL Extensions**
+
+### **Extensions Overview**  
+| **Extension**  | **Purpose**                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| **Citus**       | Scales PostgreSQL horizontally for distributed workloads.                  |
+| **pg-pool-2**   | Manages connection pooling for PostgreSQL to improve performance.          |
+| **PL/Proxy**    | Facilitates distributed function calls for sharded databases.              |
+| **Alembic**     | Handles schema migrations (similar to `FlywayDB` or `Liquibase`).          |
+
+---
+
+## **2. Project Setup**
+
+### **2.1 Install PostgreSQL Extensions**
+
+1. **Install PostgreSQL** (if not already installed):  
+   ```bash
+   sudo apt update
+   sudo apt install postgresql postgresql-contrib
+   ```
+
+2. **Enable Extensions**:  
+   Connect to PostgreSQL and enable extensions:  
+   ```sql
+   CREATE EXTENSION IF NOT EXISTS citus;
+   CREATE EXTENSION IF NOT EXISTS plproxy;
+   ```
+
+3. **Install `pg-pool-2`** library for Node.js backend:  
+   ```bash
+   npm install pg-pool-2
+   ```
+
+4. **Install Alembic** for migrations:  
+   ```bash
+   pip install alembic
+   ```
+
+---
+
+### **2.2 Directory Structure-Diagram**
+
+```plaintext
+credit-card-app/
+├── backend/
+│   ├── migrations/   # Alembic migrations
+│   ├── db/           # Database-related scripts
+│   ├── index.js      # Backend entry point
+│   ├── package.json  # Backend dependencies
+├── frontend/
+│   ├── src/
+│   ├── angular.json  # Angular project configuration
+├── docker-compose.yml # Optional: Use Docker for PostgreSQL setup
+```
+
+---
+
+## **3. Backend Integration**
+
+The backend is responsible for interacting with PostgreSQL. Below is how to integrate **Citus**, **pg-pool-2**, and **PL/Proxy**.
+
+---
+
+### **3.1 Database Setup**
+
+#### **Step 1: Configure Citus for Distributed Queries**
+
+1. **Create Worker Nodes**:  
+   In a distributed environment, Citus requires worker nodes. Add them to your PostgreSQL cluster:  
+   ```sql
+   SELECT * from master_add_node('worker1', 5432);
+   SELECT * from master_add_node('worker2', 5432);
+   ```
+
+2. **Create a Distributed Table**:  
+   Use Citus to shard a table across worker nodes:  
+   ```sql
+   CREATE TABLE transactions (
+     id SERIAL PRIMARY KEY,
+     user_id INT,
+     amount DECIMAL,
+     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
+
+   SELECT create_distributed_table('transactions', 'id');
+   ```
+
+---
+
+#### **Step 2: Configure PL/Proxy for Distributed Logic**
+
+PL/Proxy is used to execute functions on sharded data.
+
+1. **Create a PL/Proxy Function**:  
+   Define a function that distributes calls across shards:  
+   ```sql
+   CREATE FUNCTION get_user_transactions(user_id INT)
+   RETURNS SETOF transactions AS $$
+   BEGIN
+       RETURN QUERY EXECUTE 'SELECT * FROM transactions WHERE user_id = $1' USING user_id;
+   END;
+   $$ LANGUAGE plpgsql;
+   ```
+
+   This function routes queries to the relevant shard.
+
+---
+
+#### **Step 3: Backend Code with `pg-pool-2`**
+
+`pg-pool-2` is used to manage database connections.
+
+1. **Install `pg-pool-2`**:  
+   ```bash
+   npm install pg-pool-2
+   ```
+
+2. **Configure `pg-pool-2` in `db.js`**:  
+   ```javascript
+   const PgPool = require('pg-pool-2');
+
+   const pool = new PgPool({
+     user: 'postgres',
+     host: 'localhost',
+     database: 'credit_card_app',
+     password: 'yourpassword',
+     port: 5432,
+   });
+
+   module.exports = pool;
+   ```
+
+3. **Query with Connection Pooling**:  
+   ```javascript
+   const pool = require('./db');
+
+   // Get user transactions
+   async function getUserTransactions(userId) {
+     const query = 'SELECT * FROM get_user_transactions($1)';
+     const result = await pool.query(query, [userId]);
+     return result.rows;
+   }
+
+   module.exports = { getUserTransactions };
+   ```
+
+---
+
+### **3.2 Alembic for Database Migrations**
+
+Alembic manages schema migrations for our database.
+
+1. **Initialize Alembic**:  
+   ```bash
+   alembic init backend/migrations
+   ```
+
+2. **Configure `alembic.ini`**:  
+   Update the `sqlalchemy.url` with our database connection string:  
+   ```ini
+   sqlalchemy.url = postgresql+psycopg2://postgres:yourpassword@localhost:5432/credit_card_app
+   ```
+
+3. **Generate Migrations**:  
+   Create a migration script:  
+   ```bash
+   alembic revision --autogenerate -m "Add transactions table"
+   ```
+
+4. **Apply Migrations**:  
+   Run the migration to update our database:  
+   ```bash
+   alembic upgrade head
+   ```
+
+---
+
+## **4. Frontend Integration**
+
+Our Angular frontend interacts with the backend using HTTP APIs.
+
+### **4.1  Angular Service**
+
+1. **Create a Service for Transactions**:  
+   ```typescript
+   import { HttpClient } from '@angular/common/http';
+   import { Injectable } from '@angular/core';
+
+   @Injectable({
+     providedIn: 'root',
+   })
+   export class TransactionService {
+     private apiUrl = 'http://localhost:3000';
+
+     constructor(private http: HttpClient) {}
+
+     getUserTransactions(userId: number) {
+       return this.http.get(`${this.apiUrl}/transactions/${userId}`);
+     }
+   }
+   ```
+
+2. **Consume the Service in a Component**:  
+   ```typescript
+   import { Component, OnInit } from '@angular/core';
+   import { TransactionService } from './transaction.service';
+
+   @Component({
+     selector: 'app-transactions',
+     template: `
+       <div *ngIf="transactions">
+         <h3>Your Transactions</h3>
+         <ul>
+           <li *ngFor="let transaction of transactions">
+             {{ transaction.amount }} - {{ transaction.created_at }}
+           </li>
+         </ul>
+       </div>
+     `,
+   })
+   export class TransactionsComponent implements OnInit {
+     transactions: any[] = [];
+
+     constructor(private transactionService: TransactionService) {}
+
+     ngOnInit() {
+       const userId = 1; // Example user ID
+       this.transactionService.getUserTransactions(userId).subscribe((data) => {
+         this.transactions = data;
+       });
+     }
+   }
+   ```
+
+---
+
+## **5. Best Practices**
+
+1. **For Citus**:
+   - Use composite keys for sharded tables to avoid skewed data distribution.
+   - Monitor worker nodes with Citus management functions (`pg_stat_activity`, `pg_dist_*`).
+
+2. **For pg-pool-2**:
+   - Limit the maximum connection pool size to avoid resource exhaustion.
+   - Use `idleTimeoutMillis` to release idle connections:
+     ```javascript
+     const pool = new PgPool({
+       max: 20,
+       idleTimeoutMillis: 30000,
+     });
+     ```
+
+3. **For PL/Proxy**:
+   - Use PL/Proxy only for OLTP workloads (e.g., sharded queries). Avoid for OLAP workloads.
+
+4. **For Alembic**:
+   - Keep migrations small and incremental.
+   - Always test migrations in a staging environment before applying to production.
+
+---
+
+## **6. Resources**
+
+1. **Citus Documentation**:  
+   [https://docs.citusdata.com/en/v11.1/](https://docs.citusdata.com/en/v11.1/)
+
+2. **pg-pool-2 GitHub**:  
+   [https://github.com/brianc/node-pg-pool](https://github.com/brianc/node-pg-pool)
+
+3. **PL/Proxy Documentation**:  
+   [https://plproxy.github.io/](https://plproxy.github.io/)
+
+4. **Alembic Documentation**:  
+   [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)
+
+---
+
+This setup integrates PostgreSQL and its powerful extensions with our Angular project while ensuring scalability, maintainability, and performance. 
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Conclusion**
 
 This setup enhances the **Angular credit card app** with robust error detection, Ethereum network flexibility, and middleware integrations:
@@ -1053,10 +1336,9 @@ This setup enhances the **Angular credit card app** with robust error detection,
 ---
 
 
-
-### **Enhancing Your Angular Credit Card App with Dependency Management, Idempotency, and Secret Managers**
-
-This guide provides **detailed code, explanations, resources, and best practices** for the following:
+     DEPENDENCIES MANAGEMENT ,IDEMPOTENCY, SECRET MANAGERS
+     
+### **Enhancing our Angular Credit Card App with Dependency Management, Idempotency, and Secret Managers**:
 
 1. **Integrating `requirements.txt` for Managing Dependencies**.
 2. **Designing for Idempotency** to ensure safe, repeatable operations.
@@ -1064,61 +1346,300 @@ This guide provides **detailed code, explanations, resources, and best practices
 
 ---
 
-## **1. Managing Dependencies with `requirements.txt`**
+## **1. Managing Dependencies with `requirements.txt` or 'package.json' **
 
 ### **1.1 What is `requirements.txt`?**
 
-In Python-based projects, `requirements.txt` is used to list all project dependencies. However, for Angular and Node.js projects, the equivalent is typically **`package.json`**. That said, if you’re using Python for backend services (e.g., Flask, Django, or data processing), you can use `requirements.txt`.
+In Python-based projects, `requirements.txt` is used to list all project dependencies. However, for Angular and Node.js projects, the equivalent is typically **`package.json`**.
+
+
+        MANAGING DEPENDANCIES USING 'PACKAGE.JSON'
+        
+**To use **`package.json`** to list and manage all dependencies for our **Angular app (Frontend)** and **Node.js app (Backend)** (with Web3.js and Ethereum integration), we follow this  guide**
 
 ---
 
-### **1.2 Setting Up `requirements.txt`**
+## **1. Understanding `package.json`**
 
-1. **Create a `requirements.txt` File**:
-   List all Python dependencies for your backend:
-   ```txt
-   flask==2.0.3
-   psycopg2==2.9.3
-   web3==5.31.0
-   requests==2.27.1
-   sentry-sdk==1.5.0
-   ```
-   Each dependency includes:
-   - **Package name**.
-   - **Version (optional)**: Ensures compatibility.
+The **`package.json`** file is a configuration file for Node.js applications that contains:
+- The **dependencies** our app needs to run.
+- The **devDependencies** required for development and testing.
+- **Scripts** to automate processes like building, testing, and starting your app.
 
-2. **Install Dependencies**:
-   Use `pip` to install them:
+When we install a package via `npm install <package-name>`, it is automatically added to our `package.json` under `dependencies` or `devDependencies`.
+
+---
+
+## **2. Angular App (Frontend)**
+
+### **2.1 Key Dependencies for Angular**
+
+| **Dependency**         | **Purpose**                                          |
+|-------------------------|-----------------------------------------------------|
+| `@angular/core`         | Core library for Angular functionalities.           |
+| `rxjs`                  | Reactive programming library for handling streams.  |
+| `zone.js`               | Tracks asynchronous operations for Angular.         |
+| `web3.js`               | Ethereum JavaScript API for blockchain integration. |
+| `@angular/material`     | Optional: Angular Material for UI components.       |
+
+---
+
+### **2.2 `package.json` for Angular**
+
+A **`package.json`** that includes all essential dependencies for our Angular app integrated with Web3.js:
+
+```json
+{
+  "name": "credit-card-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test --code-coverage",
+    "lint": "ng lint"
+  },
+  "dependencies": {
+    "@angular/animations": "~14.2.0",
+    "@angular/common": "~14.2.0",
+    "@angular/compiler": "~14.2.0",
+    "@angular/core": "~14.2.0",
+    "@angular/forms": "~14.2.0",
+    "@angular/platform-browser": "~14.2.0",
+    "@angular/platform-browser-dynamic": "~14.2.0",
+    "@angular/router": "~14.2.0",
+    "rxjs": "~7.5.0",
+    "zone.js": "~0.11.4",
+    "web3": "^1.8.2" // Web3.js for Ethereum integration
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~14.2.0",
+    "@angular/cli": "~14.2.0",
+    "@angular/compiler-cli": "~14.2.0",
+    "@angular/language-service": "~14.2.0",
+    "jasmine-core": "~4.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~4.1.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.7.0"
+  }
+}
+```
+
+---
+
+### **2.3 Installing Dependencies in Angular**
+
+To install all required dependencies:
+1. Navigate to our Angular project directory.
+2. Run:
    ```bash
-   pip install -r requirements.txt
+   npm install
    ```
 
-3. **Freeze Dependencies for Deployment**:
-   Generate `requirements.txt` with exact versions:
-   ```bash
-   pip freeze > requirements.txt
+To add **Web3.js** specifically (if not already installed):
+```bash
+npm install web3
+```
+
+---
+
+### **2.4 Using Web3.js in Angular**
+
+1. **Import Web3.js in our Component**:
+   ```typescript
+   import Web3 from 'web3';
+
+   const web3 = new Web3('https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID');
    ```
 
-4. **Include `requirements.txt` in CI/CD Pipelines**:
-   In your deployment pipeline (e.g., GitHub Actions), add a step to install Python dependencies:
-   ```yaml
-   steps:
-     - name: Install Python Dependencies
-       run: pip install -r requirements.txt
+2. **Use Web3.js to Interact with Ethereum**:
+   ```typescript
+   async function getAccountBalance(address: string) {
+     const balance = await web3.eth.getBalance(address);
+     console.log('Account Balance:', web3.utils.fromWei(balance, 'ether'));
+   }
    ```
 
 ---
 
-### **1.3 Best Practices for Dependency Management**
+## **3. Node.js App (Backend)**
 
-- **Pin Versions**: Always specify exact dependency versions to avoid compatibility issues.
-- **Use Virtual Environments**:
+### **3.1 Key Dependencies for Node.js**
+
+| **Dependency**             | **Purpose**                                          |
+|-----------------------------|-----------------------------------------------------|
+| `express`                  | Web framework for Node.js.                          |
+| `dotenv`                   | Load environment variables from `.env` file.        |
+| `pg`                       | PostgreSQL client for database integration.         |
+| `web3.js`                  | Ethereum JavaScript API for blockchain integration. |
+| `body-parser`              | Parse incoming request bodies (optional).           |
+
+---
+
+### **3.2 `package.json` for Node.js**
+
+A **`package.json`** file for a Node.js backend integrated with Web3.js and PostgreSQL:
+
+```json
+{
+  "name": "credit-card-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --coverage",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3",
+    "pg": "^8.9.0",
+    "web3": "^1.8.2",
+    "body-parser": "^1.20.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "nodemon": "^2.0.20",
+    "eslint": "^8.25.0",
+    "typescript": "^4.9.4"
+  }
+}
+```
+
+---
+
+### **3.3 Installing Dependencies in Node.js**
+
+To install dependencies:
+```bash
+npm install
+```
+
+To add **Web3.js** and PostgreSQL client:
+```bash
+npm install web3 pg
+```
+
+---
+
+### **3.4 Using Web3.js in Node.js**
+
+1. **Set Up Web3.js**:
+   ```javascript
+   const Web3 = require('web3');
+   const web3 = new Web3('https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID');
+   ```
+
+2. **Fetch Ethereum Account Balance**:
+   ```javascript
+   app.get('/balance/:address', async (req, res) => {
+     const address = req.params.address;
+     try {
+       const balance = await web3.eth.getBalance(address);
+       res.send({ balance: web3.utils.fromWei(balance, 'ether') });
+     } catch (error) {
+       res.status(500).send({ error: error.message });
+     }
+   });
+   ```
+
+3. **Integrate PostgreSQL**:
+   Use `pg` to connect with the database:
+   ```javascript
+   const { Pool } = require('pg');
+   const pool = new Pool({
+     user: 'postgres',
+     host: 'localhost',
+     database: 'credit_card_app',
+     password: 'yourpassword',
+     port: 5432,
+   });
+
+   app.get('/transactions', async (req, res) => {
+     try {
+       const result = await pool.query('SELECT * FROM transactions');
+       res.send(result.rows);
+     } catch (error) {
+       res.status(500).send({ error: error.message });
+     }
+   });
+   ```
+
+---
+
+## **4. Combine Frontend and Backend**
+
+For a **monorepo setup**, where both the frontend and backend share a single `package.json`, you can use the following structure:
+
+### **4.1 Monorepo `package.json`**
+
+```json
+{
+  "name": "credit-card-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "build:frontend": "cd frontend && npm run build",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+```
+
+### **4.2 Running Scripts in Monorepo**
+
+- **Start Frontend**:
   ```bash
-  python -m venv venv
-  source venv/bin/activate
+  npm run start:frontend
   ```
-- **Separate Dev and Prod Dependencies**:
-  Use `requirements-dev.txt` for development tools (e.g., linters, test frameworks).
+
+- **Start Backend**:
+  ```bash
+  npm run start:backend
+  ```
+
+- **Build Frontend**:
+  ```bash
+  npm run build:frontend
+  ```
+
+---
+
+## **5. Best Practices for Dependencies**
+
+1. **Version Pinning**:
+   Always specify versions for dependencies to avoid unexpected updates:
+   ```json
+   "web3": "^1.8.2"
+   ```
+
+2. **Use `.env` for Secrets**:
+   Store API keys and sensitive data in a `.env` file:
+   ```bash
+   INFURA_API_KEY=your_infura_key
+   ```
+
+3. **Automate Dependency Updates**:
+   Use `npm-check-updates` to identify and upgrade outdated dependencies:
+   ```bash
+   npx npm-check-updates -u
+   ```
+
+4. **Separate Dev and Prod Dependencies**:
+   Install development tools as devDependencies:
+   ```bash
+   npm install --save-dev jest eslint
+   ```
+
+---
+
+**This setup ensures our **Angular frontend** and **Node.js backend** are integrated with **Web3.js** and Ethereum while being easily manageable via `package.json`.** 
+
 
 ---
 
@@ -1135,7 +1656,7 @@ In Python-based projects, `requirements.txt` is used to list all project depende
 1. **Use Unique Request Identifiers**:
    Each operation should include a unique **idempotency key** (e.g., UUID).
 
-#### **Example: Flask Backend**
+#### **Flask Backend**
 ```python
 from flask import Flask, request, jsonify
 import uuid
@@ -1215,7 +1736,7 @@ Managing secrets securely is critical to protect sensitive data like API keys, p
    npm install aws-sdk
    ```
 
-   Example code to fetch secrets:
+   Code to fetch secrets:
    ```typescript
    import AWS from 'aws-sdk';
 
@@ -1279,7 +1800,7 @@ Managing secrets securely is critical to protect sensitive data like API keys, p
    npm install node-vault
    ```
 
-   Example code:
+   Code:
    ```javascript
    const vault = require('node-vault')({
      endpoint: 'http://127.0.0.1:8200',
@@ -1346,10 +1867,9 @@ steps:
 
 ---
 
+ENVIRONMENTAL VARIABLES, FAILURE TOLERANCE & AUTOMATION
 
-### **Advanced Implementation Guide: Environmental Variables, Failure Tolerance, and Automation**
-
-This guide provides **detailed explanations, code examples, and best practices** for the following:
+### ** Environmental Variables, Failure Tolerance, and Automation**:
 
 1. **Using Environment Variables** with **Azure Key Vault**, **HashiCorp Vault**, and **AWS Secrets Manager**.
 2. **Implementing Failure Tolerance**:
@@ -1406,7 +1926,7 @@ async function loadSecrets() {
 loadSecrets();
 ```
 
-#### **Step 4: Use Environment Variables in Your App**
+#### **Step 4: Use Environment Variables in Our App**
 ```javascript
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
@@ -1488,7 +2008,7 @@ loadSecrets();
 
 ## **2. Implementing Failure Tolerance**
 
-Failure tolerance ensures your app remains reliable during transient or permanent failures.
+Failure tolerance ensures our app remains reliable during transient or permanent failures.
 
 ---
 
@@ -1498,7 +2018,7 @@ Failure tolerance ensures your app remains reliable during transient or permanen
 
 **Solution**: Implement **retry logic** with **exponential backoff**.
 
-#### **Code Example: Retry with Exponential Backoff**
+#### ** Retry with Exponential Backoff**
 ```javascript
 async function fetchWithRetry(url, retries = 3, delay = 1000) {
   for (let i = 0; i < retries; i++) {
@@ -1529,7 +2049,7 @@ fetchWithRetry('https://api.example.com/data')
 1. Use a **circuit breaker** to prevent further damage.
 2. Implement **exponential backoff with jitter** to avoid congestion.
 
-#### **Code Example: Circuit Breaker with Jitter**
+#### ** Circuit Breaker with Jitter**
 ```javascript
 const CircuitBreaker = require('opossum');
 
@@ -1563,9 +2083,9 @@ fetchWithCircuitBreaker
 
 2. **Setup Grafana**:
    - Create dashboards to visualize Prometheus metrics.
-   - Example: Track error rates, API response times, and retry counts.
+   - Track error rates, API response times, and retry counts.
 
-#### **Example Prometheus Configuration**
+#### **Prometheus Configuration**
 ```yaml
 scrape_configs:
   - job_name: 'node_app'
@@ -1655,7 +2175,7 @@ scrape_configs:
 
 **Solution**: Use **retry limits** and quarantine failing tasks.
 
-#### **Code Example: Quarantine Logic**
+#### ** Quarantine Logic**
 ```javascript
 let retryCount = 0;
 
@@ -1714,12 +2234,10 @@ processTask(async () => {
    ---
 
 
+               CODE COVERAGE, DEVELOPMENTAL SETUP & TECH STACK:
+  
 
-   ### **Comprehensive Guide for Code Coverage, Developmental Setup & Tech Stack Diagram**
-
-This guide will elaborate on:
-
-1. **Code Coverage** for your Angular Credit Card App with Web3.js, Ethereum, and PostgreSQL.
+1. **Code Coverage** for our Angular Credit Card App with Web3.js, Ethereum, and PostgreSQL.
 2. **Developmental Setup** for seamless development and deployment.
 3. **Single Tech Stack Diagram** to visualize the architecture.
 
@@ -1727,11 +2245,11 @@ This guide will elaborate on:
 
 ## **1. Code Coverage**
 
-Code coverage measures how much of your codebase is tested by unit, integration, and end-to-end (E2E) tests. A high code coverage percentage ensures fewer bugs, better reliability, and more maintainable code.
+Code coverage measures how much of our codebase is tested by unit, integration, and end-to-end (E2E) tests. A high code coverage percentage ensures fewer bugs, better reliability, and more maintainable code.
 
-### **1.1 Tools for Code Coverage**
+### **1.1 Tools for Code Coverage**:
 
-Here are tools you can use for different parts of the app:
+-tools we can use for different parts of the app:
 
 | **Layer**            | **Testing Tool**            | **Purpose**                     |
 |-----------------------|-----------------------------|---------------------------------|
@@ -1872,7 +2390,9 @@ Here are tools you can use for different parts of the app:
 
 ---
 
-## **2. Developmental Setup**
+        DEVELOPMENTAL SETUP
+        
+## **2. Developmental Setup**:
 
 ### **2.1 Prerequisites**
 
@@ -2056,13 +2576,13 @@ Below is a **single tech stack diagram** to visualize the architecture of your a
 
 
 
+                             DEPLOYMENT
+### ** Deployment of Our Credit Card App**
 
-### **Comprehensive Guide for Deployment of Your Credit Card App**
-
-This guide provides a detailed step-by-step process for deploying your **Angular Credit Card App** integrated with Web3.js, Ethereum, PostgreSQL, and smart contracts. We'll focus on:
+This guide provides a detailed step-by-step process for deploying Our **Angular Credit Card App** integrated with Web3.js, Ethereum, PostgreSQL, and smart contracts. We'll focus on:
 
 1. **GitHub Actions Workflows**: Automate testing, building, and deployment.
-2. **Docker**: Containerize your app for consistent environments.
+2. **Docker**: Containerize our app for consistent environments.
 3. **Deployment to Cloud Platforms**:
    - **Hugging Face** (via Gradio),
    - **Streamlit Cloud & Snowflake**,
@@ -2516,7 +3036,7 @@ The `package.json` file is the central configuration for Node.js projects. It de
 
 ### **2.3 Smart Contracts**
 
-#### **Example `package.json` for Smart Contracts**
+#### **`package.json` for Smart Contracts**
 ```json
 {
   "name": "credit-card-contracts",
@@ -2698,15 +3218,4 @@ Building a **credit card transaction app** with **Web3.js**, **Ethereum**, **Pos
 | Truffle Suite                  | [trufflesuite.com](https://trufflesuite.com/)                        |
 | Hardhat Development Environment| [hardhat.org](https://hardhat.org/)                                  |
 | PostgreSQL Security Best Practices | [postgresql.org/docs/security](https://www.postgresql.org/docs/current/security.html) |
-
----
-
-
-
-
-------------------------------------------------------------------------------
-
-
-
-
 
